@@ -1,0 +1,103 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 30, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 4, // Gaps between modules (4px)/
+
+  "margin": "5 1",
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "mpris",
+    "custom/media",
+    "custom/ps4",
+    "pulseaudio",
+  ],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "custom/rclone", "custom/power"],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "warp-on-scroll": true,
+    // "on-scroll-up": "hyprctl  dispatch workspace e+1",
+    // "on-scroll-down": "hyprctl  dispatch workspace e-1",
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "",
+      "default": "",
+    },
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+    },
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "  {volume}% <span  size='15000' rise='000'>{icon}</span>",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "{format_source}",
+    // "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋋 ",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol --tab=3'",
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": false,
+    "on-click": "wlogout -b 4",
+  },
+
+  "mpris": {
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
+    "player-icons": {
+      "default": "▶",
+    },
+    "status-icons": {
+      "paused": "<span size='15000' rise='-1000'>⏸</span>",
+    },
+    "player": "brave",
+    "tooltip-format": "{artist} - {title}",
+    "on-scroll-up": "~/scripts/waybar/brave-vol.sh +5%",
+    "on-scroll-down": "~/scripts/waybar/brave-vol.sh -5%",
+  },
+
+  "custom/ps4": {
+    "exec": "$HOME/scripts/waybar/ps4-battery.sh",
+    "return-type": "json",
+    "format": "<span size='15000' rise='-1000'>󰨢 </span>{text}",
+    "interval": 5,
+    "on-click": "bluetoothctl disconnect $(bluetoothctl devices | grep 'Wireless Controller' | awk '{print $2}') && notify-send 'PS4 Controller' 'Disconnecting...'",
+  },
+
+  "custom/rclone": {
+    "exec": "~/scripts/rclone/status-waybar.sh",
+    // "format": "{text}",
+    "return-type": "json",
+    "signal": 8,
+    "on-click": "bash ~/scripts/rclone/sync-gdrive.sh",
+
+    "tooltip-format": "Rclone gdrive",
+  },
+}
