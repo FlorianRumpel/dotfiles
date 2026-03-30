@@ -15,7 +15,7 @@
     "custom/ps4",
     "pulseaudio",
   ],
-  "modules-center": ["clock"],
+  "modules-center": ["custom/notifications", "clock"],
   "modules-right": ["tray", "custom/rclone", "custom/power"],
   // Modules configuration
   "hyprland/workspaces": {
@@ -40,12 +40,14 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}",
+    // "tooltip-format": "{:%a %H:%M:%S}",
+    "tooltip": false,
+    "interval": 1,
+    "format-alt": "{:%d/%m/%Y %H:%M:%S}",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "  {volume}% <span  size='15000' rise='000'>{icon}</span>",
+    "format": " <span rise='1500'>{volume}% </span><span  size='15000' rise='000'>{icon}</span>",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "{format_source}",
@@ -97,7 +99,11 @@
     "return-type": "json",
     "signal": 8,
     "on-click": "bash ~/scripts/rclone/sync-gdrive.sh",
-
     "tooltip-format": "Rclone gdrive",
+  },
+  "custom/notifications": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "swaync-client -t",
   },
 }

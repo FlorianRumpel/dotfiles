@@ -7,6 +7,12 @@
 alias cp='cp -v'
 alias ls='lsd --header'
 
+shopt -s cdspell 
+
+shopt -s histappend
+export HISTSIZE=1000
+export HISTIGNORE='ls:cd ~:cd ..:exit:c:clear:history'
+export HISTCONTROL=erasedups
 
 alias grep='grep -i --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -17,6 +23,8 @@ alias c="clear"
 alias sshpi='TERM=xterm-256color ssh flori@pi.fritz.box'
 #alias rm=trash -v
 alias cw=$HOME/scripts/wallpapers.sh
+alias rm='trash -v'
+alias cp='cp -v'
 export EDITOR=nvim
 export TERM=xterm-256color
 export PATH=".local/bin:$PATH"
