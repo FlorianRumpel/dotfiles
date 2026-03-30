@@ -53,7 +53,15 @@
       "app-name": "example.app.id"
     }
   },
-  "widgets": ["inhibitors", "title", "dnd", "notifications"],
+
+  "widgets": [
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications",
+    "buttons-grid",
+    "mpris"
+  ],
   "widget-config": {
     "notifications": {
       "vexpand": true
@@ -71,6 +79,7 @@
     "dnd": {
       "text": "Do Not Disturb"
     },
+
     "label": {
       "max-lines": 5,
       "text": "Label Text"
@@ -85,11 +94,18 @@
       "buttons-per-row": 7,
       "actions": [
         {
-          "label": "直",
+          "label": "󰖩",
           "type": "toggle",
           "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "command": "bash -c ''",
+          "update-command": ""
+        },
+        {
+          "label": "󰂯",
+          "type": "toggle",
+          "active": true,
+          "command": "bash -c 'blueman-manager & swaync-client -t '",
+          "update-command": ""
         }
       ]
     }

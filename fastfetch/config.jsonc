@@ -4,6 +4,7 @@
   "modules": [
     "title",
     "separator",
+
     "os",
     "host",
     "kernel",
