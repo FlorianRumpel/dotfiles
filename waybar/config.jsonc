@@ -74,15 +74,17 @@
     "format": "{player_icon}",
     "format-paused": "{status_icon}",
     "player-icons": {
-      "default": "▶",
+      "default": "<span size='15000' rise='-1000'>⏸</span>",
     },
     "status-icons": {
-      "paused": "<span size='15000' rise='-1000'>⏸</span>",
+      "paused": "▶",
     },
-    "player": "brave",
+    "player": "spotify",
     "tooltip-format": "{artist} - {title}",
-    "on-scroll-up": "~/scripts/waybar/brave-vol.sh +5%",
-    "on-scroll-down": "~/scripts/waybar/brave-vol.sh -5%",
+    // "on-scroll-up": "~/scripts/waybar/brave-vol.sh +5%",
+    // "on-scroll-down": "~/scripts/waybar/brave-vol.sh -5%",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-",
   },
 
   "custom/ps4": {
@@ -98,6 +100,7 @@
     // "format": "{text}",
     "return-type": "json",
     "signal": 8,
+    // "interval": 30,
     "on-click": "bash ~/scripts/rclone/sync-gdrive.sh",
     "tooltip-format": "Rclone gdrive",
   },

@@ -27,9 +27,9 @@ alias rm='trash -v'
 alias cp='cp -v'
 export EDITOR=nvim
 export TERM=xterm-256color
-export PATH=".local/bin:$PATH"
+export PATH=".local/bin:$HOME/scripts:$PATH"
 
-
+eval $(gnome-keyring-daemon --start)
 
 #Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
@@ -43,3 +43,9 @@ brave-vol() {
   ID=$(pactl list sink-inputs | grep -B 20 'application.name = "Brave"' | grep "Sink Input" | grep -o '[0-9]*')
   pactl set-sink-input-volume "$ID" "$1"
 }
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/florian/.openclaw/completions/openclaw.bash"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
