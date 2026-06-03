@@ -1,0 +1,7 @@
+
+@theme "/home/florian/.local/share/rofi/themes/rounded-template.rasi"
+
+configuration {
+  me-select-entry: "MousePrimary";
+    me-accept-entry: "MouseDPrimary";
+}

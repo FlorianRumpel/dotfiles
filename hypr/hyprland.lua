@@ -17,3 +17,8 @@ require("default")
 require("windowrules")
 require("look-and-feel")
 require("look-and-feel")
+
+
+hl.workspace_rule({workspace="1", persistent=true, monitor=benq})
+hl.workspace_rule({workspace="2", persistent=true, monitor=terra, default=true})
+hl.workspace_rule({workspace="3", monitor=terra})

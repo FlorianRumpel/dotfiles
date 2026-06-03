@@ -1,0 +1,83 @@
+{
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "warp-on-scroll": true,
+
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "",
+      "default": "",
+    },
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+    },
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    // "tooltip-format": "{:%a %H:%M:%S}",
+    "tooltip": false,
+    "interval": 1,
+    "format-alt": "{:%d/%m/%Y %H:%M:%S}",
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": " <span rise='1500'>{volume}% </span><span  size='15000' rise='000'>{icon}</span>",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "{format_source}",
+    // "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋋 ",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol --tab=3'",
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": false,
+    "on-click": "wlogout -b 4",
+  },
+
+  "mpris": {
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
+    "player-icons": {
+      "default": "<span size='15000' rise='-1000'>⏸</span>",
+    },
+    "status-icons": {
+      "paused": "▶",
+    },
+    "player": "spotify",
+    "tooltip-format": "{artist} - {title}",
+    // "on-scroll-up": "~/scripts/waybar/brave-vol.sh +5%",
+    // "on-scroll-down": "~/scripts/waybar/brave-vol.sh -5%",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-",
+  },
+
+  "custom/ps4": {
+    "exec": "$HOME/scripts/waybar/ps4-battery.sh",
+    "return-type": "json",
+    "format": "<span size='15000' rise='-1000'>󰨢 </span>{text}",
+    "interval": 5,
+    "on-click": "bluetoothctl disconnect $(bluetoothctl devices | grep 'Wireless Controller' | awk '{print $2}') && notify-send 'PS4 Controller' 'Disconnecting...'",
+  },
+
+  "custom/notifications": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "swaync-client -t",
+  },
+}

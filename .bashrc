@@ -29,7 +29,7 @@ export EDITOR=nvim
 export TERM=xterm-256color
 export PATH=".local/bin:$HOME/scripts:$PATH"
 
-eval $(gnome-keyring-daemon --start)
+eval $(gnome-keyring-daemon --start 2>/dev/null)
 
 #Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"

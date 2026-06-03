@@ -82,6 +82,10 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
+hl.animation({leaf= "specialWorkspaceIn", enabled = true, speed = 1.39, bezier = "almostLinear", style = "slidefadevert"})
+hl.animation({leaf= "specialWorkspaceOut", enabled = true, speed = 1.39, bezier = "almostLinear", style = "slidefadevert"})
+
+
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.

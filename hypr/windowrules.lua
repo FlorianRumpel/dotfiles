@@ -6,8 +6,9 @@ hl.window_rule({
   border_size = 10
 })
 
-local largeSize = {"org.signal.Signal", "org.telegram.desktop", "Ferdium", "fdm"}
+local largeSize = {"org.twosheds.iwgtk", "org.signal.Signal", "org.telegram.desktop", "Ferdium", "fdm"}
 local smallSize = {"blueman-manager", "org.pulseaudio.pavucontrol"}
+
 
 for i = 1,#largeSize do
    hl.window_rule({
@@ -17,7 +18,7 @@ for i = 1,#largeSize do
   },
   float = true,
   size= {1000,800},
-  move = {"cursor_x-(window_w*0.5))", "(cursor_y-(window_h*0.5))"}
+  center = true
   -- border_size = 10
 })
 end
@@ -30,7 +31,7 @@ for i = 1,#smallSize do
   },
   float = true,
   size= {900,500},
-  move = {"cursor_x-(window_w*0.5))", "(cursor_y-(window_h*0.5))"}
+ center = true
   -- border_size = 10
 })
 end
@@ -60,11 +61,34 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name="save-as",
+  match = {
+    class = "DesktopEditors"
+    
+  },
+center=true,
+  float = true
+})
+
+
+hl.window_rule({
   name="baobab",
   match = {
     class = "org.gnome.baobab"
   },
   float = true,
-  move = {"cursor_x-(window_w*0.5))", "(cursor_y-(window_h*0.5))"}
+  center = true
 
+})
+
+
+hl.window_rule({
+    match = {
+        class = "^(code)$",
+        workspace = "special:magic silent",
+    },
+    workspace = "special:magic silent",
+    float = true,
+    size = { 900, 500 },
+    move = { "(monitor_w*0.5)-450", 50 }
 })
