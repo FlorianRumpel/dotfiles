@@ -4,8 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-alias cp='cp -v'
-alias ls='lsd --header'
+
 
 shopt -s cdspell 
 
@@ -17,14 +16,19 @@ export HISTCONTROL=erasedups
 alias grep='grep -i --color=auto'
 PS1='[\u@\h \W]\$ '
 trap 'eval "$PROMPT_COMMAND"' WINCH
+
+
 #Personal
+echo ""
 fastfetch
+
 alias c="clear"
 alias sshpi='TERM=xterm-256color ssh flori@pi.fritz.box'
-#alias rm=trash -v
-alias cw=$HOME/scripts/wallpapers.sh
 alias rm='trash -v'
 alias cp='cp -v'
+alias cp='cp -v'
+alias ls='lsd --header'
+
 export EDITOR=nvim
 export TERM=xterm-256color
 export PATH=".local/bin:$HOME/scripts:$PATH"

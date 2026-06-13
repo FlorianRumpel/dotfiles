@@ -1,4 +1,3 @@
-// -*- mode: jsonc -*-
 [
   {
     // "layer": "top", // Waybar at top layer
@@ -18,7 +17,7 @@
       "custom/ps4",
       "pulseaudio",
     ],
-    "modules-center": ["custom/notifications", "clock"],
+    "modules-center": ["custom/notifications", "clock", "custom/schalke"],
     "modules-right": ["tray", "custom/power"],
   },
   {
@@ -39,7 +38,8 @@
       "custom/ps4",
       "pulseaudio",
     ],
-    "modules-center": ["custom/notifications", "clock"],
+
+    "modules-center": ["custom/notifications", "clock", "custom/schalke"],
     "modules-right": ["tray", "custom/rclone", "custom/power"],
     // Modules configuration
 
@@ -49,6 +49,7 @@
       "signal": 8,
       "on-click": "bash ~/scripts/rclone/sync-gdrive.sh",
       "tooltip-format": "Rclone gdrive",
+      "on-click-right": "notify-send 'Rclone' 'Deleting Lockfile...' && rclone deletefile '/home/florian/.cache/rclone/bisync/gdrive_..home_florian_GoogleDrive.lck' && notify-send 'Rclone' 'Lockfile deleted'",
     },
   },
 ]

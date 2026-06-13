@@ -12,18 +12,26 @@ hl.config({
         border_size = 2,
 
         col = {
-            -- active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            active_border   = "rgba(00000000)",
+            active_border   = { colors = {"rgba(004d9dee)", "rgba(002147ee)"}, angle = 45 },
+            -- active_border   = "rgba(00000000)",
             inactive_border = "rgba(595959aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
+        resize_on_border = true,
 
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
         layout = "dwindle",
+
+        snap = {
+        enabled = true,
+        window_gap = 15,
+        monitor_gap = 15
+    } 
+
+      
     },
 
     decoration = {

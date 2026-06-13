@@ -1,0 +1,30 @@
+:root {
+  --cc-bg: #002147;
+  --noti-border-color: #ffffff26;
+
+  --noti-bg: 0, 33, 71; /* rgb code for #002147  */
+  --noti-bg-alpha: 1;
+  --noti-bg-darker: #262626;
+  --noti-bg-hover: #00346e;
+  --noti-bg-focus: var(--noti-bg);
+  --noti-close-bg: #4e4e4e;
+  --noti-close-bg-hover: #5e5e5e;
+  --text-color: rgb(255, 255, 255);
+  --text-color-disabled: #969696;
+  --bg-selected: rgb(0, 128, 255);
+  --notification-icon-size: 64px;
+  --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
+  --notification-group-icon-size: 32px;
+  --border: 1px solid var(--noti-border-color);
+  --border-radius: 12px;
+  --notification-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  --font-size-body: 15px;
+  --font-size-summary: 16px;
+  /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
+  --hover-tranistion: background 0.15s ease-in-out;
+  --group-collapse-tranistion: opacity 400ms ease-in-out;
+  --hover-transition: var(--hover-tranistion);
+  --group-collapse-transition: var(--group-collapse-tranistion);
+}

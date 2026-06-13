@@ -1,0 +1,8 @@
+/* === Schalke 04 Colors === */
+
+:root {
+  /* Blues */
+  --schalke-dark: #002147; /* rgb(0, 33, 71)   */
+  --schalke-lighter: #00346e; /* rgb(0, 52, 110)  */
+  --schalke-normal: #004d9d; /* rgb(0, 77, 157)  */
+}

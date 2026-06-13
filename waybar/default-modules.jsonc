@@ -68,7 +68,7 @@
   },
 
   "custom/ps4": {
-    "exec": "$HOME/scripts/waybar/ps4-battery.sh",
+    "exec": "$HOME/.config/waybar/scripts/ps4-battery.sh",
     "return-type": "json",
     "format": "<span size='15000' rise='-1000'>󰨢 </span>{text}",
     "interval": 5,
@@ -77,6 +77,12 @@
 
   "custom/notifications": {
     "format": "",
+    "tooltip": false,
+    "on-click": "swaync-client -t",
+  },
+
+  "custom/schalke": {
+    "format": " ",
     "tooltip": false,
     "on-click": "swaync-client -t",
   },

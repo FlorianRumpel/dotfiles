@@ -20,7 +20,7 @@ hl.bind(mainMod .." + H" ,hl.dsp.exec_cmd("hypremoji"))
 
 hl.bind("ALT + F4" ,hl.dsp.exec_cmd("systemctl poweroff"))
 hl.bind("Print" ,hl.dsp.exec_cmd("grimblast copysave area ~/Pictures/Screenshots/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"))
-
+hl.bind(mainMod .."+ SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 
 

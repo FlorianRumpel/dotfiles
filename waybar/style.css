@@ -1,3 +1,5 @@
+@import "/home/florian/.config/waybar/theme.css";
+
 * {
   border: none;
   border-radius: 0;
@@ -24,27 +26,28 @@ window#waybar {
   /* background: rgba(43, 48, 59, 0.5); */
   background: transparent;
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: white;
+  color: @text;
 }
+
 #workspaces {
-  background-color: black;
+  background-color: @background;
   padding: 5px;
   border-radius: 15px;
   /* min-width: 40px; */
 }
 #workspaces button {
-  background: #161616;
+  background-color: @workspaces-button-background;
   color: white;
   border-radius: 10px;
   padding: 0 10px;
 }
 
 #workspaces button:hover {
-  background: #ffffff;
+  background-color: @workspaces-button-hover-background;
   color: black;
 }
 #workspaces button.active:hover {
-  background: #242424;
+  background-color: @workspaces-button-hover-active-background;
   color: white;
 }
 
@@ -53,31 +56,31 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: @workspaces-button-active-background;
+  color: @workspaces-button-active-text;
   padding: 0 20px;
 }
 
 #mpris {
   padding: 0 10px;
-  background-color: #000000;
+  background-color: @background;
   border-radius: 15px;
 }
 #pulseaudio {
   padding: 0 10px;
-  background-color: #000000;
+  background-color: @background;
   border-radius: 15px;
 }
 
 /* .modules-center {
   padding: 0 10px;
-  background-color: #000000;
+  background-color: @background;
   border-radius: 15px;
 } */
 
 #custom-notifications {
   padding: 0 10px;
-  background-color: #000000;
+  background-color: @background;
   border-radius: 15px;
   font-size: 18px;
 }
@@ -87,11 +90,11 @@ window#waybar {
   font-size: 15px;
   padding: 0 10px;
   border-radius: 15px;
-  background-color: #000000;
+  background-color: @background;
 }
 
 .modules-right {
-  background: rgb(0, 0, 0);
+  background-color: @background;
   padding: 0 10px;
   border-radius: 15px;
 }
@@ -104,7 +107,7 @@ window#waybar {
 }
 
 #tray menu {
-  background: rgba(0, 0, 0, 0.9);
+  background-color: @tray-menu-background;
   padding: 5px;
 }
 /* #tray menu menuitem {
@@ -122,7 +125,7 @@ window#waybar {
 
 #custom-ps4 {
   font-weight: bold;
-  background: rgb(0, 0, 0);
+  background-color: @background;
   padding: 0 10px;
   border-radius: 15px;
 }

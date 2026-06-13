@@ -1,7 +1,9 @@
 
-@theme "/home/florian/.local/share/rofi/themes/rounded-template.rasi"
+@theme ".config/rofi/themes/rounded-template.rasi"
 
 configuration {
+  show-icons:true;
+  display-drun: "Applications";
   me-select-entry: "MousePrimary";
-    me-accept-entry: "MouseDPrimary";
+  me-accept-entry: "MouseDPrimary";
 }

@@ -1,0 +1,23 @@
+/* dark: #002147
+lighter: #00346E
+*/
+
+@define-color background #002147;
+@define-color workspaces-button-background #00346E;
+@define-color workspaces-button-hover-background #ffffff;
+@define-color workspaces-button-hover-active-background #00346E;
+@define-color workspaces-button-text #242424;
+@define-color workspaces-button-active-background #ffffff;
+@define-color workspaces-button-active-text #000000;
+@define-color tray-menu-background #002147;
+@define-color text #ffffff;
+
+#custom-schalke {
+  min-width: 33px;
+  min-height: 33px;
+  /* background-color: rgb(255, 255, 255); */
+  background-image: url("file:///home/florian/.config/waybar/schalke-logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

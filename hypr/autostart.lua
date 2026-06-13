@@ -15,6 +15,7 @@ hl.exec_cmd("hyprpaper & firefox ")
 
 hl.exec_cmd("org.telegram.desktop -startintray")
 hl.exec_cmd("org.signal.Signal -startintray")
+
 hl.exec_cmd("echo $HYPRLAND_INSTANCE_SIGNATURE > /tmp/his")
 
 hl.exec_cmd("wl-paste --type text --watch cliphist store")

@@ -1,13 +1,13 @@
-hl.window_rule({
-  name = "pavu-floating",
-  match = {
-    class = "my-window"
-  },
-  border_size = 10
-})
-
 local largeSize = {"org.twosheds.iwgtk", "org.signal.Signal", "org.telegram.desktop", "Ferdium", "fdm"}
 local smallSize = {"blueman-manager", "org.pulseaudio.pavucontrol"}
+
+hl.window_rule({
+  name = "center-dialogs",
+  match = {
+    float=true
+  },
+  center = true
+})
 
 
 for i = 1,#largeSize do
@@ -18,8 +18,7 @@ for i = 1,#largeSize do
   },
   float = true,
   size= {1000,800},
-  center = true
-  -- border_size = 10
+  
 })
 end
 
@@ -31,8 +30,6 @@ for i = 1,#smallSize do
   },
   float = true,
   size= {900,500},
- center = true
-  -- border_size = 10
 })
 end
 
@@ -49,7 +46,7 @@ hl.window_rule({
   match = {
     class = "discord"
   },
-  workspace = "3 silent"
+  workspace = "3"
 })
 
 hl.window_rule({
@@ -60,15 +57,15 @@ hl.window_rule({
   workspace = "1"
 })
 
-hl.window_rule({
-  name="save-as",
-  match = {
-    class = "DesktopEditors"
+-- hl.window_rule({
+--   name="save-as",
+--   match = {
+--     class = "DesktopEditors"
     
-  },
-center=true,
-  float = true
-})
+--   },
+--  center=true,
+--   float = true
+-- })
 
 
 hl.window_rule({
@@ -81,11 +78,22 @@ hl.window_rule({
 
 })
 
+hl.window_rule({
+  name="calculator",
+  match = {
+    class = "org.gnome.Calculator"
+  },
+  size={200,400},
+  float = true,
+  center = true
+
+})
+
 
 hl.window_rule({
     match = {
         class = "^(code)$",
-        workspace = "special:magic silent",
+        workspace = "special:magic",
     },
     workspace = "special:magic silent",
     float = true,

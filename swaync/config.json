@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "ignore-gtk-theme": true,
-  "positionX": "center",
+  "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
@@ -33,19 +33,7 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "app-name": "example.app.id",
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "app-name": "example.app.id",
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
+
   "notification-visibility": {
     "example-name": {
       "state": "muted",
@@ -54,14 +42,7 @@
     }
   },
 
-  "widgets": [
-    "inhibitors",
-    "title",
-    "dnd",
-    "notifications",
-    "buttons-grid",
-    "mpris"
-  ],
+  "widgets": ["inhibitors", "title", "dnd", "notifications", "buttons-grid"],
   "widget-config": {
     "notifications": {
       "vexpand": true
@@ -98,28 +79,49 @@
           "label": "󰖩",
           "type": "normal",
           "active": true,
-          "command": "bash -c 'iwgtk & swaync-client -t '",
+          "command": "iwgtk & swaync-client -t ",
           "update-command": ""
         },
         {
           "label": "󰂯",
           "type": "normal",
           "active": true,
-          "command": "bash -c 'blueman-manager & swaync-client -t '",
+          "command": "blueman-manager & swaync-client -t ",
           "update-command": ""
         },
         {
           "label": "",
           "type": "normal",
           "active": true,
-          "command": "bash -c 'code /home/florian/.dotfiles & swaync-client -t'",
+          "command": "code /home/florian/.dotfiles & swaync-client -t",
           "update-command": ""
         },
         {
           "label": "",
           "type": "normal",
           "active": true,
-          "command": "/home/florian/scripts/wallpapers.sh",
+          "command": "PATH=$HOME/scripts:$PATH && change-wallpaper",
+          "update-command": ""
+        },
+        {
+          "label": "",
+          "type": "normal",
+          "active": true,
+          "command": "gnome-text-editor ~/Pictures/wallpapers/active-wallpapers.txt",
+          "update-command": ""
+        },
+        {
+          "label": "󰖔",
+          "type": "normal",
+          "active": true,
+          "command": "pkill hyprsunset || hyprsunset",
+          "update-command": ""
+        },
+        {
+          "label": "Switch Theme",
+          "type": "normal",
+          "active": true,
+          "command": "/home/florian/scripts/apply-theme && swaync-client -t",
           "update-command": ""
         }
       ]

@@ -1,0 +1,12 @@
+
+* {
+    bg0:    #004d9dF2; /* deep navy, main window background    */
+    bg1:    #004d9dCC; /* königsblau, inputbar                 */
+    bg2:    #004d9d4D; /* königsblau subtle, message box       */
+    bg3:    #FFFFFFED; /* white, selection highlight           */
+    fg0:    #FFFFFF;   /* white, primary text                  */
+    fg1:    #FFFFFF;   /* white, bright text                   */
+    fg2:    #A8C4E8;   /* light blue-grey, secondary text      */
+    fg3:    #5588BB;   /* muted königsblau, placeholder        */
+    fg4: #002147; // element selected color
+}
