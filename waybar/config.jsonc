@@ -8,14 +8,14 @@
     "margin": "5 1",
     "include": ["~/.config/waybar/default-modules.jsonc"],
 
-    "output": "DP-1",
+    "output": "DP-1", //benq
 
     "modules-left": [
       "hyprland/workspaces",
       "mpris",
       "custom/media",
       "custom/ps4",
-      "pulseaudio",
+      "group/audio",
     ],
     "modules-center": ["custom/notifications", "clock", "custom/schalke"],
     "modules-right": ["tray", "custom/power"],
@@ -29,14 +29,14 @@
     "margin": "5 1",
     "include": ["~/.config/waybar/default-modules.jsonc"],
 
-    "output": "HDMI-A-1",
+    "output": "HDMI-A-1", //terra
 
     "modules-left": [
       "hyprland/workspaces",
       "mpris",
       "custom/media",
       "custom/ps4",
-      "pulseaudio",
+      "group/audio",
     ],
 
     "modules-center": ["custom/notifications", "clock", "custom/schalke"],

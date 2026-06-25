@@ -5,11 +5,12 @@ menu = "rofi -show drun"
 benq="DP-1"
 terra="HDMI-A-1"
 
+require("theme")
 
 require("monitors")
 
 require("keybinds")
-
+require("layerrules")
 require("input")
 require("env")
 require("autostart")

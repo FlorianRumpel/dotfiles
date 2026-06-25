@@ -25,14 +25,11 @@
     "interval": 1,
     "format-alt": "{:%d/%m/%Y %H:%M:%S}",
   },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": " <span rise='1500'>{volume}% </span><span  size='15000' rise='000'>{icon}</span>",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "{format_source}",
-    // "format-source": "{volume}% ",
-    "format-source-muted": "",
+  "pulseaudio#output": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": " Muted",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -40,10 +37,23 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": "",
     },
     "on-click": "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol --tab=3'",
   },
+
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "<span  color='#ff0000'></span>",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  },
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#input", "pulseaudio#output"],
+  },
+
   "custom/power": {
     "format": "󰐥",
     "tooltip": false,
@@ -60,11 +70,12 @@
       "paused": "▶",
     },
     "player": "spotify",
-    "tooltip-format": "{artist} - {title}",
-    // "on-scroll-up": "~/scripts/waybar/brave-vol.sh +5%",
-    // "on-scroll-down": "~/scripts/waybar/brave-vol.sh -5%",
+    // "ignored-players": ["YoutubeMusic"],
     "on-scroll-up": "playerctl volume 0.05+",
     "on-scroll-down": "playerctl volume 0.05-",
+    // Adjusts only Pear Desktop's audio stream, bypassing the MPRIS volume bug
+    // "on-scroll-up": "pactl list sink-inputs | awk '/Sink Input #/{id=substr($3,2)} /pear-desktop|youtube-music/{print id}' | xargs -I {} pactl set-sink-input-volume {} +5%",
+    // "on-scroll-down": "pactl list sink-inputs | awk '/Sink Input #/{id=substr($3,2)} /pear-desktop|youtube-music/{print id}' | xargs -I {} pactl set-sink-input-volume {} -5%",
   },
 
   "custom/ps4": {

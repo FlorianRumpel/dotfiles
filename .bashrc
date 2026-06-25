@@ -28,6 +28,7 @@ alias rm='trash -v'
 alias cp='cp -v'
 alias cp='cp -v'
 alias ls='lsd --header'
+alias p='sudo pacman'
 
 export EDITOR=nvim
 export TERM=xterm-256color

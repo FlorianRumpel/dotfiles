@@ -1,9 +1,9 @@
 :root {
-  --cc-bg: #002147;
+  --cc-bg: #002147b3; /* alpha of .7 */
   --noti-border-color: #ffffff26;
 
   --noti-bg: 0, 33, 71; /* rgb code for #002147  */
-  --noti-bg-alpha: 1;
+  --noti-bg-alpha: 0.7;
   --noti-bg-darker: #262626;
   --noti-bg-hover: #00346e;
   --noti-bg-focus: var(--noti-bg);

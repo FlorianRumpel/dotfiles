@@ -1,4 +1,4 @@
-local largeSize = {"org.twosheds.iwgtk", "org.signal.Signal", "org.telegram.desktop", "Ferdium", "fdm"}
+local largeSize = {"org.twosheds.iwgtk", "org.signal.Signal", "org.telegram.desktop", "ferdium", "fdm"}
 local smallSize = {"blueman-manager", "org.pulseaudio.pavucontrol"}
 
 hl.window_rule({
@@ -35,8 +35,9 @@ end
 
 
 hl.window_rule({
-  name="Spotify",
+  name="YoutubeMusic",
   match = {
+    -- class = "com.github.th_ch.youtube_music"
     class = "Spotify"
   },
   workspace = "3 silent"
